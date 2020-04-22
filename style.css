@@ -1,0 +1,239 @@
+body{
+    font-family: "Poppins", sans-serif;
+}
+
+.sec-1{
+    height: 500px;
+}
+.search-mech{
+    margin-top: 40px;
+    font-size: 20px;
+}
+.button-offer{
+    text-decoration: none;
+}
+
+.search-input{
+    width:500px!important;
+}
+.back{
+    background-image: url("back.png");
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    -moz-box-align: center;
+    align-items: center;
+    overflow: hidden;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-color: rgb(247, 247, 247);
+    background-size: cover;
+}
+.hamburger{
+    display: none;
+    
+}
+.hamburger .line{
+    width: 30px;
+    height: 3px;
+    margin-bottom: 5px;
+    background-color: gray;
+    
+}
+.fJToMw {
+
+    font-family: "Lato", sans-serif;
+    font-size: 13px;
+    color: rgb(0, 158, 127);
+    line-height: 38px;
+    font-weight: 700;
+    padding: 0px 15px;
+    background-color: rgb(247, 247, 247);
+    border-radius: 6px;
+    margin-left: 5px;
+    white-space: nowrap;
+}
+.extra-menu{
+    display: none;
+}
+
+@media screen and (max-width:700px){
+    .nav-item.dropdown{
+        display:none;
+    }
+    .sec-1{
+        height: 300px;
+    }
+
+    .back{
+        min-height: 300px;
+    }
+    
+    .offer-button b{
+        display: none;
+    }
+    .need-help-button b,.need-help-button svg{
+        display:none;
+    }
+    .join-button{
+        display: none;
+    }
+    #p-1{
+        display: none;
+    }
+    .search-box{
+        display: none;
+    }
+    .h1-tag b{
+        font-size: 30px;
+    }
+    .img3 img{
+        display: none;
+    }
+    .extra-menu{
+        width: 60%;
+        left: -100%;
+        top: 0;
+        bottom: 0;
+        display: flex;
+        transition: 1s;
+        position: fixed;
+        background-color: white;
+        z-index:1100;
+        flex-direction: column;
+        align-items: center;
+        display: block;
+    }
+    .extra-menu.show{
+        left:0;
+    }
+    .hamburger{
+        z-index: 2000;
+        display: block;
+    }
+    
+}
+    @media screen and (max-width:500px){
+        .h1-tag b{
+            font-size:20px;
+        }
+        .sec-1{
+            height: 160px;
+        }
+    
+        .back{
+            min-height: 160px;
+        }
+}
+
+.extra-menu-li{
+    padding: 20px;
+    font-size: 15px;
+    list-style: none;
+    padding: 20px 0px;
+    margin-left: 30px;
+}
+.extra-menu-li a{
+    color: black;
+}
+
+.extra-menu-li a:hover{
+    text-decoration: none;
+}
+.offer-button b:hover{
+    color: #009e7f;
+}
+.need-help-button:hover b,.need-help-button:hover svg{
+    color: #009e7f;
+}
+
+.search-input{
+    padding: 19px 0px!important;
+}
+.price-button span{
+    border-radius: 12px;
+    background-color: white;
+    color: #009e7f;
+}
+.price-button span:hover{
+    background-color: #009e7f;
+    color: white;
+}
+.backet{
+    height: 100px;
+    width:100px;
+    background-color: #009e7f;
+    right: 0;
+    position: fixed;
+    border-radius: 6px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    z-index: 2500;
+}
+.item-sum{
+    font-size: 15px;
+    margin-top: 10px;
+    display: flex;
+    flex-flow: row;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+.price-sum{
+    margin-top: -10px;
+    justify-content: center;
+    text-align: center;
+    padding: 9px;
+}
+.price-sums{
+    border: 1px solid white;
+    border-radius: 6px;
+    background-color: white;
+    font-size: 15px;
+    color: #009e7f;
+    font-weight: bold;
+}
+.body-2 span{
+    color:#009e7f;
+    background-color: white;
+}
+.body-2 span:hover{
+    color: white;
+    background-color:#009e7f ;
+    border-radius: 15px;
+}
+.backet-items{
+    display: none;
+}
+.backet-items{
+    width: 30%;
+    right: -100%;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    transition: 1s;
+    position: fixed;
+    background-color: white;
+    z-index:1100;
+    flex-direction: column;
+    align-items: center;
+    display: block;
+}
+.backet-items.show{
+    right:0;
+    z-index: 3000;
+}
+.svg:hover{
+    opacity: 0.6;
+}
+.body-1{
+    width: 50%;
+}
+.body-2{
+    width: 50%;
+}
+#banana modal-dialog{
+    max-width: 1020px!important;
+}
