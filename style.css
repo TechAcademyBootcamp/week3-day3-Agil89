@@ -237,3 +237,52 @@ body{
 #banana modal-dialog{
     max-width: 1020px!important;
 }
+
+.card-img{
+    width:87px !important;
+    
+}
+
+.card-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.counters-class{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+.product-x{
+    align-self:flex-end;
+    margin-left: 30px;
+}
+.product-x svg{
+    cursor: pointer;
+}
+
+.item-count{
+    padding:0px 3px;
+}
+.card{
+    border: none !important;
+}
+.counters-class{
+    border: 1px solid rgb(212, 212, 212);
+    border-style: none;
+    border-radius: 200px;
+    width: 30px;
+    background-color: #f7f7f7;
+}
+.plus-btn{
+    font-size: 25px;
+    color: rgb(121, 121, 121);
+    cursor: pointer;
+}
+.minus-btn{
+    font-size: 25px;
+    color: rgb(121, 121, 121);
+    cursor: pointer;
+}
