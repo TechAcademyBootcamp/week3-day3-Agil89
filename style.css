@@ -319,3 +319,11 @@ body{
 .center_div_p2_span{
     margin-right: 10px;
 }
+.parent-of-cart{
+    background-color: #009e7f;
+    width: 70px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
