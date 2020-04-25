@@ -231,18 +231,18 @@ for (var i = 0; i < cards.length; i++) {
             //     </div>
             //     </div>`;
             var leng = document.querySelector('#card_products').children.length;
-            if(!clicked_element.classList.contains('price')){
-            parent_of_cart.innerHTML = "";
-            console.log('asd');
-            console.log(parent_of_cart.classList.contains('price'));
-            console.log(parent_of_cart);
-            let clone_of_minus = div_4_child_4.cloneNode(true);
-            let clone_of_plus = div_4_child_2.cloneNode(true);
-            let clone_of_count = div_4_child_3.cloneNode(true);
-            parent_of_cart.appendChild(clone_of_minus);
-            parent_of_cart.appendChild(clone_of_count);
-            parent_of_cart.appendChild(clone_of_plus);
-            parent_of_cart.classList.add('parent-of-cart','add_to_cart');
+            if(!clicked_element.classList.contains('parent-of-cart')){
+                parent_of_cart.innerHTML = "";
+                console.log('asd');
+                console.log(parent_of_cart.classList.contains('price'));
+                console.log(parent_of_cart);
+                let clone_of_minus = div_4_child_4.cloneNode(true);
+                let clone_of_plus = div_4_child_2.cloneNode(true);
+                let clone_of_count = div_4_child_3.cloneNode(true);
+                parent_of_cart.appendChild(clone_of_minus);
+                parent_of_cart.appendChild(clone_of_count);
+                parent_of_cart.appendChild(clone_of_plus);
+                parent_of_cart.classList.add('parent-of-cart','add_to_cart');
         }
             
 
@@ -250,6 +250,17 @@ for (var i = 0; i < cards.length; i++) {
                 element.innerHTML = leng);
         } else {
             document.getElementsByClassName('card-modal-btn')[0].click();
+            let card_img = this.querySelector('.cards_imgs').getAttribute('src');
+            document.querySelector('.modal-main-img').setAttribute('src',card_img);
+            document.querySelectorAll('.thumb_img').forEach(element=>
+                element.setAttribute('src',card_img));
+            let product_name = this.querySelector('.product_name>b').textContent;
+            document.querySelector('.product-title').innerText = product_name;
+            let prdct_unit = this.querySelector('.product-unit').textContent;
+            document.querySelector('.unit-place').innerText = prdct_unit;
+            let prdct_price = this.querySelector('.price-number').textContent;
+            console.log(prdct_price);
+            document.querySelector('.price-place').innerText = prdct_price;
         }
 
 
@@ -262,11 +273,6 @@ document.querySelector('.hamburger').addEventListener('click', function () {
 
 
 
-document.querySelector('.modall').addEventListener('click', function (){
-    let card_img = document.querySelector('.cards_imgs').getAttribute('src');
-    console.log(card_img);
-    document.querySelector('.modal-main-img').setAttribute('src') = card_img;
-})
 
 
 
