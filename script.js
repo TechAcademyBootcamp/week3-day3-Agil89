@@ -232,17 +232,24 @@ for (var i = 0; i < cards.length; i++) {
             //     </div>`;
             var leng = document.querySelector('#card_products').children.length;
             if(!clicked_element.classList.contains('parent-of-cart')){
-                parent_of_cart.innerHTML = "";
-                console.log('asd');
-                console.log(parent_of_cart.classList.contains('price'));
-                console.log(parent_of_cart);
+                let new_card_parent = parent_of_cart.parentElement;
+                parent_of_cart.classList.add('d-none');
+                let new_card = document.createElement('div');
+                new_card_parent.appendChild(new_card);
+                new_card.classList.add("clone_card");
                 let clone_of_minus = div_4_child_4.cloneNode(true);
+                clone_of_minus.classList.add('clone_of_minus','clones');
                 let clone_of_plus = div_4_child_2.cloneNode(true);
+                clone_of_plus.classList.add('clone_of_plus','clones');
                 let clone_of_count = div_4_child_3.cloneNode(true);
-                parent_of_cart.appendChild(clone_of_minus);
-                parent_of_cart.appendChild(clone_of_count);
-                parent_of_cart.appendChild(clone_of_plus);
-                parent_of_cart.classList.add('parent-of-cart','add_to_cart');
+                clone_of_count.classList.add('clone_of_count','clones');
+                new_card.appendChild(clone_of_minus);
+                new_card.appendChild(clone_of_count);
+                new_card.appendChild(clone_of_plus);
+                // parent_of_cart.appendChild(clone_of_minus);
+                // parent_of_cart.appendChild(clone_of_count);
+                // parent_of_cart.appendChild(clone_of_plus);
+                // parent_of_cart.classList.add('parent-of-cart','add_to_cart');
         }
             
 
