@@ -340,4 +340,5 @@ body{
 .clones {
     color: white;
     font-weight: bold;
+    border-style: none;
 }
