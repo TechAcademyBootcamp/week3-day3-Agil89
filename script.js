@@ -164,11 +164,9 @@ for (var i = 0; i < cards.length; i++) {
             }
 
             function addItem(x) {
-                // console.log(product_name);
                 let parent = document.querySelectorAll(`[card_title="${product_name}"]`);
                 all_sum_plus = parseInt(document.querySelector('.price-sums').textContent);
                 all_sum_plus = parseInt(all_sum_plus) + parseInt(prices_num);
-                // counter = parseInt(parent.querySelector('.products-count').textContent);
                 counter++;
                 parent.forEach((element) => {
                     element.querySelectorAll('.products-count').forEach((element) => {
@@ -200,9 +198,16 @@ for (var i = 0; i < cards.length; i++) {
                 all_sum_plus = parseInt(document.querySelector('.price-sums').textContent);
                 all_sum_plus = parseInt(all_sum_plus) - parseInt(prices_num);
                 counter = parseInt(parent[0].querySelector('.products-count').textContent);
-                
                 counter--;
-               
+                if (counter == 0) {
+                    //    parent[1].querySelector('.clone_card').classList.add('d-none');
+                    //    parent[1].querySelector('.price-button').classList.remove('d-none');
+                    // card_div_1.remove();
+                    // leng = document.querySelector('#card_products').children.length;
+                    // document.querySelectorAll('.item-count').forEach(element =>
+                    //     element.innerHTML = leng);
+                    removeItem();
+                }
                 parent.forEach((element) => {
                     element.querySelectorAll('.products-count').forEach((element) => {
                         element.innerHTML = counter;
@@ -216,15 +221,7 @@ for (var i = 0; i < cards.length; i++) {
                 document.querySelectorAll('.price-sums').forEach(element =>
                     element.innerHTML = all_sum_plus);
                     console.log(parent[1]);
-                if (counter == 0) {
-                    // parent[1].querySelector('.clone_card').classList.add('d-none');
-                    // parent[1].querySelector('.price-button').classList.remove('d-none');
-                    // card_div_1.remove();
-                    // leng = document.querySelector('#card_products').children.length;
-                    // document.querySelectorAll('.item-count').forEach(element =>
-                    //     element.innerHTML = leng);
-                    removeItem();
-                }
+                
 
             }
             div_4_child_4.addEventListener('click', function (event) {
@@ -253,19 +250,16 @@ for (var i = 0; i < cards.length; i++) {
                 new_card.appendChild(clone_of_minus);
                 new_card.appendChild(clone_of_count);
                 new_card.appendChild(clone_of_plus);
-                // parent_of_cart.appendChild(clone_of_minus);
-                // parent_of_cart.appendChild(clone_of_count);
-                // parent_of_cart.appendChild(clone_of_plus);
-                // parent_of_cart.classList.add('parent-of-cart','add_to_cart');
-
+                
+                clone_of_minus.addEventListener('click', function () {
+                    minusItem(this);
+                    
+                })
                 clone_of_plus.addEventListener('click', function () {
                     addItem(this);
 
                 })
-                clone_of_minus.addEventListener('click', function () {
-                    minusItem(this);
-
-                })
+                
             }
             // document.querySelector('.btn-card-inModal').addEventListener('click', function(){
 
