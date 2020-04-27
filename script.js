@@ -148,8 +148,6 @@ for (var i = 0; i < cards.length; i++) {
             function removeItem() {
                 let parent = document.querySelector(`[card_title="${product_name}"]`);
                 let minus_sum = parent.querySelector('.sum').textContent;
-               
-                
                 parent.remove();
                 let summary = document.querySelector('.price-sums').textContent;
                 summary = parseInt(summary) - parseInt(minus_sum);
@@ -161,11 +159,9 @@ for (var i = 0; i < cards.length; i++) {
             }
 
             function addItem(x) {
-                // console.log(product_name);
                 let parent = document.querySelectorAll(`[card_title="${product_name}"]`);
                 all_sum_plus = parseInt(document.querySelector('.price-sums').textContent);
                 all_sum_plus = parseInt(all_sum_plus) + parseInt(prices_num);
-                // counter = parseInt(parent.querySelector('.products-count').textContent);
                 counter++;
                 parent.forEach((element) => {
                     element.querySelectorAll('.products-count').forEach((element) => {
@@ -199,9 +195,16 @@ for (var i = 0; i < cards.length; i++) {
                 all_sum_plus = parseInt(document.querySelector('.price-sums').textContent);
                 all_sum_plus = parseInt(all_sum_plus) - parseInt(prices_num);
                 counter = parseInt(parent[0].querySelector('.products-count').textContent);
-                
                 counter--;
-               
+                if (counter == 0) {
+                    //    parent[1].querySelector('.clone_card').classList.add('d-none');
+                    //    parent[1].querySelector('.price-button').classList.remove('d-none');
+                    // card_div_1.remove();
+                    // leng = document.querySelector('#card_products').children.length;
+                    // document.querySelectorAll('.item-count').forEach(element =>
+                    //     element.innerHTML = leng);
+                    removeItem();
+                }
                 parent.forEach((element) => {
                     element.querySelectorAll('.products-count').forEach((element) => {
                         element.innerHTML = counter;
@@ -215,49 +218,14 @@ for (var i = 0; i < cards.length; i++) {
                 document.querySelectorAll('.price-sums').forEach(element =>
                     element.innerHTML = all_sum_plus);
                     console.log(parent[1]);
-                if (counter == 0) {
-                       parent[1].querySelector('.clone_card').classList.add('d-none');
-                       parent[1].querySelector('.price-button').classList.remove('d-none');
-                    // card_div_1.remove();
-                    // leng = document.querySelector('#card_products').children.length;
-                    // document.querySelectorAll('.item-count').forEach(element =>
-                    //     element.innerHTML = leng);
-                    removeItem();
-                }
+                
 
             }
             div_4_child_4.addEventListener('click', function (event) {
                 minusItem(this);
             })
 
-            // document.getElementById('card_products').innerHTML += `<div class="card card_div_1 mb-3" card_title="${product_name}">
-            //     <div class="row no-gutters card_div_2">
-            //     <div class="col-md-12 d-flex w-100 card_div_3" style="border-top:1px solid rgb(198, 198, 198)">
-            //         <div class="col-md-8 d-flex justify-content-around ">
-            //             <div class="counters-class">
-            //             <span class="plus-btn">+</span>
-            //             <span class="products-count">${counter}</span>
-            //             <span class="minus-btn">-</span>
-            //             </div>
-            //             <img src="${card_image}" class="card-img" alt="...">
-            //             <div>
-            //                 <h6 class="card-title">${product_name}</h6>
-            //                 <p class="card-text" style ="font-size:14px;color:#009e7f;font-weight:bold;">$${prices_num}</p>
-            //                 <p class="" style="font-size:10px; color:rgb(121, 121, 121)"><span class="prd-unit" style="color:rgb(121, 121, 121)">${counter}</span> X ${product_unit}</p>
-            //             </div>
-            //         </div>
-            //         <div class="col-md-4 d-flex align-items-center justify-content-center">
-            //             <div class="card-body d-flex align-items-center justify-content-center p-0">  
-            //                <p class="d-flex justify-content-between " >
-            //                <span style="font-weight:bold; font-size:15px; margin-top:5px">$</span> 
-            //                <span class="sum" style = "font-weight:bold;font-size:15px;margin-top:5px" >${sum}</span>
-            //                <span class = "product-x"><svg style="color:#bfbfbf" xmlns="http://www.w3.org/2000/svg" width="10.003" height="10" viewBox="0 0 10.003 10"><path data-name="_ionicons_svg_ios-close (5)" d="M166.686,165.55l3.573-3.573a.837.837,0,0,0-1.184-1.184l-3.573,3.573-3.573-3.573a.837.837,0,1,0-1.184,1.184l3.573,3.573-3.573,3.573a.837.837,0,0,0,1.184,1.184l3.573-3.573,3.573,3.573a.837.837,0,0,0,1.184-1.184Z" transform="translate(-160.5 -160.55)" fill="currentColor"></path></svg></span>
-            //                </p>
-            //             </div>
-            //         </div>
-            //     </div>
-            //     </div>
-            //     </div>`;
+           
             var leng = document.querySelector('#card_products').children.length;
 
 
@@ -280,19 +248,16 @@ for (var i = 0; i < cards.length; i++) {
                 new_card.appendChild(clone_of_minus);
                 new_card.appendChild(clone_of_count);
                 new_card.appendChild(clone_of_plus);
-                // parent_of_cart.appendChild(clone_of_minus);
-                // parent_of_cart.appendChild(clone_of_count);
-                // parent_of_cart.appendChild(clone_of_plus);
-                // parent_of_cart.classList.add('parent-of-cart','add_to_cart');
-
+                
+                clone_of_minus.addEventListener('click', function () {
+                    minusItem(this);
+                    
+                })
                 clone_of_plus.addEventListener('click', function () {
                     addItem(this);
 
                 })
-                clone_of_minus.addEventListener('click', function () {
-                    minusItem(this);
-
-                })
+                
             }
             // document.querySelector('.btn-card-inModal').addEventListener('click', function(){
 
